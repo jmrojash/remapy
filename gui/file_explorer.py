@@ -589,9 +589,9 @@ class FileExplorer(object):
                         current_page = 0 if open_oap else item.current_page()
                         subprocess.call(["evince", "-i", str(current_page), file_to_open])
                     except:
-                        subprocess.call(["xdg-open", file_to_open])
+                        subprocess.call(["open", file_to_open])
                 else:
-                    subprocess.call(["xdg-open", file_to_open])
+                    subprocess.call(["open", file_to_open])
 
 
     #
@@ -792,7 +792,7 @@ class FileExplorer(object):
             if sys.platform == "win32":
                 os.startfile(os.path.normpath(item.path_remapy))
             else:
-                subprocess.call(('xdg-open', item.path_remapy))
+                subprocess.call(('open', item.path_remapy))
 
     def key_binding_toggle_bookmark(self, event):
         self.btn_toggle_bookmark()
